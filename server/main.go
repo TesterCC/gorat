@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"net/http"
 	"sync"
 )
@@ -24,7 +25,16 @@ func main() {
 }
 
 // todo
-func startGinServer(s *sync.WaitGroup) {
+func startGinServer(wg *sync.WaitGroup) {
+	defer wg.Done()
+
+	// create gin engine
+	r := gin.Default()
+	r.LoadHTMLGlob("server/templates/*")
+
+	// add gin router
+	// non ui operation
+	// 记录回连及其的IP地址
 
 }
 
