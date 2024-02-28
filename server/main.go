@@ -46,7 +46,7 @@ func startGinServer(wg *sync.WaitGroup) {
 
 
 	// launch Gin server
-	fmt.Printf("Gin server is listening on hhttp://%s\n", ginServerAddr)
+	fmt.Printf("Gin server is listening on http://%s\n", ginServerAddr)
 
 	err := r.Run(ginServerAddr)
 	if err != nil {
