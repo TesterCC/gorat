@@ -36,9 +36,9 @@ func startGinServer(wg *sync.WaitGroup) {
 	// record connection ip
 	r.GET("/user/:ip", RecordIP)
 	// get exec cmd result
-	r.GET("/cmd/:result", GetGmdResult)
+	//r.GET("/cmd/:result", GetGmdResult)  # temp comment
 	// get picture result
-	r.POST("/photo", GetPhotoResult)
+	//r.POST("/photo", GetPhotoResult)     # temp comment
 
 	// homepage
 	r.GET("/index", Index)    // 0:30:17
